@@ -59,9 +59,27 @@ public class UrinalsTest{
     }
 
     @Test
-    void testCountUrinals(){
+    void testCountUrinalsCase1(){
         Urinals urinals = new Urinals();
         Assertions.assertEquals(urinals.countUrinals("0000"),2);
+    }
+
+    @Test
+    void testCountUrinalsCase2(){
+        Urinals urinals = new Urinals();
+        Assertions.assertEquals(urinals.countUrinals("1001"),0);
+    }
+
+    @Test
+    void testCountUrinalsCase3(){
+        Urinals urinals = new Urinals();
+        Assertions.assertEquals(urinals.countUrinals("11111"),0);
+    }
+
+    @Test
+    void testCountUrinalsCase4(){
+        Urinals urinals = new Urinals();
+        Assertions.assertEquals(urinals.countUrinals("1000001"),2);
     }
 
 }
