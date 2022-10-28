@@ -61,7 +61,7 @@ public class UrinalsTest{
         List<String> result;
         result = urinals.openFile("testfile.txt");
         Assertions.assertEquals(result.size(),1);
-        Assertions.assertEquals(result.get(0),"abc");
+        Assertions.assertEquals(result.get(0),"110");
     }
 
     @Test
@@ -77,6 +77,17 @@ public class UrinalsTest{
 
     @Test
     void testOpenFileNonInteger() throws IOException {
+        Urinals urinals = new Urinals();
+        List<String> result;
+        NumberFormatException thrown = assertThrows(
+                NumberFormatException.class,
+                () -> urinals.openFile("testfile3.txt"),
+                "throw error"
+        );
+    }
+
+    @Test
+    void testOpenFileEmptyFile() throws IOException {
         Urinals urinals = new Urinals();
         List<String> result;
         NumberFormatException thrown = assertThrows(

@@ -76,7 +76,7 @@ class Urinals{
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            if(!goodString(s)){
+            if(!validateString(s)){
                 throw new NumberFormatException();
             }
             inputs.add(s);
