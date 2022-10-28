@@ -56,7 +56,6 @@ public class UrinalsTest{
                 () -> urinals.openFile("testfile2.txt"),
                 "throw error"
         );
-        //System.out.println(thrown.getMessage());
     }
 
 }

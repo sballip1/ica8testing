@@ -15,7 +15,11 @@ class Urinals{
     public List<String> openFile(String filename) {
         File file1 = new File(filename);
         BufferedReader br = null;
+        try {
             br = new BufferedReader(new FileReader(file1));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         List<String> inputs = new ArrayList<String>();
         String s;
         while(true) {
