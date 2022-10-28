@@ -7,7 +7,22 @@ import java.util.List;
 class Urinals{
 
     public int countUrinals(String s){
-        return 0;
+        int result = 0;
+        int streak = 0;
+        for(int i = 0;i<s.length();i++) {
+            int c = s.charAt(i);
+            if(c=='0') {
+                streak++;
+                if(i>0 && s.charAt(i-1)=='1') streak--;
+            }
+            else {
+                if(streak>0) {streak--;}
+                result += (streak/2 + streak%2);
+                streak = 0;
+            }
+        }
+        result += (streak/2 + streak%2);
+        return result;
     }
 
     /**
