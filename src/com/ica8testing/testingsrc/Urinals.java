@@ -13,7 +13,13 @@ class Urinals{
      * @throws IOException
      */
     public List<String> openFile(String filename) throws IOException {
-        return new ArrayList<String>();
+        File file1 = new File("testfile.txt");
+        BufferedReader br = new BufferedReader(new FileReader(file1));
+        List<String> inputs = new ArrayList<String>();
+        String s;
+        while((s = br.readLine())!=null)
+            inputs.add(s);
+        return inputs;
     }
 
     /**
