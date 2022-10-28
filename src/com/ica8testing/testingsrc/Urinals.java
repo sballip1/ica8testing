@@ -8,7 +8,20 @@ class Urinals{
 
 
     public void appendToFile(String fileName, List<String> output){
-        return;
+        try {
+            BufferedWriter out = new BufferedWriter(
+                    new FileWriter(fileName, true));
+
+            for(String str: output){
+                out.write(str);
+                out.newLine();
+            }
+            out.close();
+        }
+
+        catch (IOException e) {
+            System.out.println("exception occurred" + e);
+        }
     }
 
     /**
