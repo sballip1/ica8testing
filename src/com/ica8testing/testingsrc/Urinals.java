@@ -15,7 +15,7 @@ class Urinals{
     public void appendToFile(String fileName, List<String> output){
         try {
             BufferedWriter out = new BufferedWriter(
-                    new FileWriter(fileName, true));
+                    new FileWriter(fileName));
 
             for(String str: output){
                 out.write(str);
