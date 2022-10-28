@@ -3,7 +3,6 @@ package com.ica8testing.testingsrc;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +71,17 @@ public class UrinalsTest{
         RuntimeException thrown = assertThrows(
                 RuntimeException.class,
                 () -> urinals.openFile("testfile2.txt"),
+                "throw error"
+        );
+    }
+
+    @Test
+    void testOpenFileNonInteger() throws IOException {
+        Urinals urinals = new Urinals();
+        List<String> result;
+        NumberFormatException thrown = assertThrows(
+                NumberFormatException.class,
+                () -> urinals.openFile("testfile3.txt"),
                 "throw error"
         );
     }

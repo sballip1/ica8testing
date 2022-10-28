@@ -76,6 +76,9 @@ class Urinals{
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            if(!goodString(s)){
+                throw new NumberFormatException();
+            }
             inputs.add(s);
         }
         return inputs;
@@ -83,7 +86,9 @@ class Urinals{
 
 
     Boolean goodString(String str) {
-
+        for(int i=0;i<str.length();i++) {
+            if(str.charAt(i)=='1' && i+1 <str.length() && str.charAt(i+1)=='1') return false;
+        }
         return true;
     }
     /**
@@ -130,7 +135,10 @@ class Urinals{
                     System.out.println("Encountered invalid input");
                     break;
                 }
-                outputs.add(u.countUrinals(s));
+                if(u.goodString(s)) outputs.add(u.countUrinals(s));
+                else {
+                    outputs.add(u.countUrinals("-1"));
+                }
             }
             System.out.println("Enter the output file name\n");
             str = reader.readLine();
