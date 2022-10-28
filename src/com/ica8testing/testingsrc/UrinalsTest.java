@@ -31,4 +31,10 @@ public class UrinalsTest{
         Assertions.assertEquals(urinals.validateString(""),false);
     }
 
+    @Test
+    void testValidateStringForTrue(){
+        Urinals urinals = new Urinals();
+        Assertions.assertEquals(urinals.validateString("101001110"),true);
+    }
+
 }
