@@ -83,7 +83,7 @@ class Urinals{
 
 
     Boolean goodString(String str) {
-        return false;
+        return true;
     }
     /**
      * validates the string
