@@ -8,7 +8,11 @@ class Urinals{
      * @return
      */
     Boolean validateString( String str ) {
-        System.out.println ("Not yet implemented");
+        int n = str.length();
+        for(int i=0;i<n;i++) {
+            if(str.charAt(i)=='0' || str.charAt(i)=='1') continue;
+            else return false;
+        }
         return true;
     }
 
