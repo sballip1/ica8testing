@@ -12,13 +12,20 @@ class Urinals{
      * @return
      * @throws IOException
      */
-    public List<String> openFile(String filename) throws IOException {
-        File file1 = new File("testfile.txt");
-        BufferedReader br = new BufferedReader(new FileReader(file1));
+    public List<String> openFile(String filename) {
+        File file1 = new File(filename);
+        BufferedReader br = null;
+            br = new BufferedReader(new FileReader(file1));
         List<String> inputs = new ArrayList<String>();
         String s;
-        while((s = br.readLine())!=null)
+        while(true) {
+            try {
+                if (!((s = br.readLine())!=null)) break;
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             inputs.add(s);
+        }
         return inputs;
     }
 
