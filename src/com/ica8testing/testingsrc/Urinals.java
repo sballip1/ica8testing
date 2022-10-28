@@ -8,7 +8,7 @@ class Urinals{
      * @return
      */
     Boolean validateString( String str ) {
-        if(str == null) return false;
+        if(str == null || str.isEmpty()) return false;
         int n = str.length();
         for(int i=0;i<n;i++) {
             if(str.charAt(i)!='0' && str.charAt(i)!='1') return false;
