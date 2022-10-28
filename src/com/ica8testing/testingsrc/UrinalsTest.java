@@ -19,4 +19,10 @@ public class UrinalsTest{
         Assertions.assertEquals(urinals.validateString("12sb"),false);
     }
 
+    @Test
+    void testValidateStringNull(){
+        Urinals urinals = new Urinals();
+        Assertions.assertEquals(urinals.validateString(null),false);
+    }
+
 }
