@@ -13,6 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class UrinalsTest{
 
+    @Test
+    void testGoodString(){
+        Urinals urinals = new Urinals();
+        Assertions.assertTrue(urinals.goodString("10010"));
+    }
+
 
     @Test
     void testValidateStringFalseCase(){

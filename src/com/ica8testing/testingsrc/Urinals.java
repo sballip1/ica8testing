@@ -7,6 +7,11 @@ import java.util.List;
 class Urinals{
 
 
+    /**
+     *
+     * @param fileName
+     * @param output
+     */
     public void appendToFile(String fileName, List<String> output){
         try {
             BufferedWriter out = new BufferedWriter(
@@ -76,6 +81,10 @@ class Urinals{
         return inputs;
     }
 
+
+    Boolean goodString(String str) {
+        return false;
+    }
     /**
      * validates the string
      * @param str
