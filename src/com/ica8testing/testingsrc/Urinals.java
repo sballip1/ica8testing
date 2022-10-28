@@ -92,7 +92,40 @@ class Urinals{
 
     //Author: Srikar Ballipalli
     // GITHUB repo: https://github.com/sballip1/ica8testing
-    public static void main(String[] args) {
-        System.out.println("inside main");
+    public static void main(String[] args) throws IOException {
+        Urinals u = new Urinals();
+        System.out.println("Select an option (Enter corresponding number only):\n1. Give string by keyboard\n2. Give an input file");
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(System.in));
+
+        String choice = reader.readLine();
+        if(choice.trim().equalsIgnoreCase("1")) {
+            while(true){
+                System.out.println("Enter a string :");
+                    String str = reader.readLine();
+                    str = str.trim();
+                    if(!u.validateString(str)){
+                        System.out.println("Invalid input\n");
+                    }
+                    System.out.println(u.countUrinals(str));
+            }
+        } else if(choice.trim().equalsIgnoreCase("2")) {
+            System.out.println("Give the input file name and please keep the file directly in ica8testing\n");
+            String str = reader.readLine();
+            str = str.trim();
+            List<String> inputs = u.openFile(str);
+            List<String> outputs = new ArrayList<String>();
+            for(String s: inputs) {
+                if(!u.validateString(s)) {
+                    System.out.println("Encountered invalid input");
+                    break;
+                }
+                outputs.add(u.countUrinals(s));
+            }
+            System.out.println("Enter the output file name\n");
+            str = reader.readLine();
+            str = str.trim();
+            u.appendToFile(str,outputs);
+        }
     }
 };
