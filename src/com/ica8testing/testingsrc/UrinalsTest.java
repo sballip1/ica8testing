@@ -19,6 +19,18 @@ public class UrinalsTest{
         Assertions.assertTrue(urinals.goodString("10010"));
     }
 
+    @Test
+    void testGoodString2(){
+        Urinals urinals = new Urinals();
+        Assertions.assertTrue(urinals.goodString("00000"));
+    }
+
+    @Test
+    void testBadString(){
+        Urinals urinals = new Urinals();
+        Assertions.assertFalse(urinals.goodString("10110"));
+    }
+
 
     @Test
     void testValidateStringFalseCase(){

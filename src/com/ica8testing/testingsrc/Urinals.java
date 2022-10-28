@@ -83,6 +83,7 @@ class Urinals{
 
 
     Boolean goodString(String str) {
+
         return true;
     }
     /**
