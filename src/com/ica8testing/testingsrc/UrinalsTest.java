@@ -58,4 +58,10 @@ public class UrinalsTest{
         );
     }
 
+    @Test
+    void testCountUrinals(){
+        Urinals urinals = new Urinals();
+        Assertions.assertEquals(urinals.countUrinals("0000"),2);
+    }
+
 }

@@ -6,6 +6,10 @@ import java.util.List;
 
 class Urinals{
 
+    public int countUrinals(String s){
+        return 0;
+    }
+
     /**
      *
      * @param filename
