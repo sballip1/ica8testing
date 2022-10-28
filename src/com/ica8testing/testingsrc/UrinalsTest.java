@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -43,8 +44,7 @@ public class UrinalsTest{
         List<String> result;
         result = urinals.openFile("testfile.txt");
         Assertions.assertEquals(result.size(),1);
-        for(String s:result)
-            Assertions.assertEquals(s,"abc");
+        Assertions.assertEquals(result.get(0),"abc");
     }
 
     @Test
@@ -61,37 +61,52 @@ public class UrinalsTest{
     @Test
     void testCountUrinalsCase1(){
         Urinals urinals = new Urinals();
-        Assertions.assertEquals(urinals.countUrinals("0000"),2);
+        Assertions.assertEquals(urinals.countUrinals("0000"),"2");
     }
 
     @Test
     void testCountUrinalsCase2(){
         Urinals urinals = new Urinals();
-        Assertions.assertEquals(urinals.countUrinals("1001"),0);
+        Assertions.assertEquals(urinals.countUrinals("1001"),"0");
     }
 
     @Test
     void testCountUrinalsCase3(){
         Urinals urinals = new Urinals();
-        Assertions.assertEquals(urinals.countUrinals("11111"),0);
+        Assertions.assertEquals(urinals.countUrinals("11111"),"0");
     }
 
     @Test
     void testCountUrinalsCase4(){
         Urinals urinals = new Urinals();
-        Assertions.assertEquals(urinals.countUrinals("1000001"),2);
+        Assertions.assertEquals(urinals.countUrinals("1000001"),"2");
     }
 
     @Test
     void testCountUrinalsCase5(){
         Urinals urinals = new Urinals();
-        Assertions.assertEquals(urinals.countUrinals("100000"),2);
+        Assertions.assertEquals(urinals.countUrinals("100000"),"2");
     }
 
     @Test
     void testCountUrinalsCase6(){
         Urinals urinals = new Urinals();
-        Assertions.assertEquals(urinals.countUrinals("0000001"),3);
+        Assertions.assertEquals(urinals.countUrinals("0000001"),"3");
+    }
+
+    @Test
+    void testAppendToFile(){
+        Urinals urinals = new Urinals();
+        List<String> input = new ArrayList<String>();
+        input.add("1");
+        input.add("0");
+        input.add("1");
+        input.add("0");
+        urinals.appendToFile("testOutput",input);
+        List<String> output = urinals.openFile("testOutput");
+        for(int i=0;i<output.size();i++){
+            Assertions.assertEquals(input.get(i),output.get(i));
+        }
     }
 
 }

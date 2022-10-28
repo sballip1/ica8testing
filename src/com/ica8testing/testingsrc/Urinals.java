@@ -6,7 +6,18 @@ import java.util.List;
 
 class Urinals{
 
-    public int countUrinals(String s){
+
+    public void appendToFile(String fileName, List<String> output){
+        return;
+    }
+
+    /**
+     * Calculates the number of 1s in valid string
+     *
+     * @param s
+     * @return result
+     */
+    public String countUrinals(String s){
         int result = 0;
         int streak = 0;
         for(int i = 0;i<s.length();i++) {
@@ -22,7 +33,7 @@ class Urinals{
             }
         }
         result += (streak/2 + streak%2);
-        return result;
+        return Integer.toString(result);
     }
 
     /**
