@@ -11,8 +11,7 @@ class Urinals{
         if(str == null) return false;
         int n = str.length();
         for(int i=0;i<n;i++) {
-            if(str.charAt(i)=='0' || str.charAt(i)=='1') continue;
-            else return false;
+            if(str.charAt(i)!='0' && str.charAt(i)!='1') return false;
         }
         return true;
     }

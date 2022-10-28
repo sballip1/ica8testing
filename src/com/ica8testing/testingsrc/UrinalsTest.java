@@ -25,4 +25,10 @@ public class UrinalsTest{
         Assertions.assertEquals(urinals.validateString(null),false);
     }
 
+    @Test
+    void testValidateStringForEmpty(){
+        Urinals urinals = new Urinals();
+        Assertions.assertEquals(urinals.validateString(""),false);
+    }
+
 }
