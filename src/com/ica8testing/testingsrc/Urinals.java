@@ -122,7 +122,10 @@ class Urinals{
                     if(!u.validateString(str)){
                         System.out.println("Invalid input\n");
                     }
-                    System.out.println(u.countUrinals(str));
+                if(u.goodString(str))  System.out.println(u.countUrinals(str));
+                else {
+                    System.out.println("-1");
+                }
             }
         } else if(choice.trim().equalsIgnoreCase("2")) {
             System.out.println("Give the input file name and please keep the file directly in ica8testing\n");
