@@ -1,6 +1,20 @@
 package com.ica8testing.testingsrc;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
 class Urinals{
+
+    /**
+     *
+     * @param filename
+     * @return
+     * @throws IOException
+     */
+    public List<String> openFile(String filename) throws IOException {
+        return new ArrayList<String>();
+    }
 
     /**
      * validates the string

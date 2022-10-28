@@ -1,13 +1,10 @@
 package com.ica8testing.testingsrc;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.util.List;
 
 
 public class UrinalsTest{
@@ -35,6 +32,16 @@ public class UrinalsTest{
     void testValidateStringForTrue(){
         Urinals urinals = new Urinals();
         Assertions.assertEquals(urinals.validateString("101001110"),true);
+    }
+
+    @Test
+    void testOpenFile() throws IOException {
+        Urinals urinals = new Urinals();
+        List<String> result;
+        result = urinals.openFile("testfile.txt");
+        Assertions.assertEquals(result.size(),1);
+        for(String s:result)
+            Assertions.assertEquals(s,"abc");
     }
 
 }
