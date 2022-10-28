@@ -82,4 +82,16 @@ public class UrinalsTest{
         Assertions.assertEquals(urinals.countUrinals("1000001"),2);
     }
 
+    @Test
+    void testCountUrinalsCase5(){
+        Urinals urinals = new Urinals();
+        Assertions.assertEquals(urinals.countUrinals("100000"),2);
+    }
+
+    @Test
+    void testCountUrinalsCase6(){
+        Urinals urinals = new Urinals();
+        Assertions.assertEquals(urinals.countUrinals("0000001"),3);
+    }
+
 }
